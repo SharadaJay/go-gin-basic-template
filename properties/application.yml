@@ -1,0 +1,11 @@
+# application configurations
+application:
+  port: ":8090"
+
+database:
+  db-username: "db_user"
+  db-password: "1937bf8cd4b702e28fadc220d396ee6bdea98ed0a62e6172e94454ef5f4399254e7f0163f312fa2c6f"
+  db-name: "db_name"
+  db-host: "localhost"
+  db-port: "3306"
+  db-encryption-password: "N1PCdw3M2B1TfJhoaY2mL736p2vCUc47"
