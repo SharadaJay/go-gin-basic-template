@@ -4,6 +4,7 @@ import (
 	"basic-gin-app/internal/entity"
 	"basic-gin-app/internal/utils"
 	"database/sql"
+	"fmt"
 	log "github.com/sirupsen/logrus"
 	"time"
 
@@ -25,6 +26,7 @@ func GetDb() *gorm.DB {
 func connectDB() *gorm.DB {
 	var err error
 	dbPassword := decryptSecretKey()
+	fmt.Println("password: ", dbPassword)
 	dsn := utils.Cfg["database"].DbUsername + ":" + dbPassword + "@tcp" + "(" + utils.Cfg["database"].DbHost + ":" + utils.Cfg["database"].DbPort + ")/" + utils.Cfg["database"].DbName + "?parseTime=true"
 
 	sqlDB, err := sql.Open("mysql", dsn)

@@ -25,6 +25,15 @@ func (c Routes) SetupRouter() {
 		healthCheckAPI.GET("/health-check", controller.HealthStatus)
 	}
 
+	resourceAPI := router.Group("/resources")
+	{
+		resourceAPI.POST("/v1", controller.CreateResource)
+		resourceAPI.GET("/v1/:id", controller.GetResourceByID)
+		resourceAPI.GET("/v1", controller.GetResources)
+		resourceAPI.PUT("/v1/:id", controller.UpdateResource)
+		resourceAPI.DELETE("/v1/:id", controller.DeleteResource)
+	}
+
 	err := router.Run(utils.Cfg["application"].Port)
 	if err != nil {
 		log.Error("Error while running router:", err)
