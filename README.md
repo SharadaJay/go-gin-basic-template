@@ -24,3 +24,10 @@ A basic REST API template for Go with Gin Web Framework
     ```bash
         go run main.go
     ```
+<br><br>
+To create a docker image;<br>
+
+* Run docker build<br>
+    ```bash
+        docker build -t go-echo-image .
+    ```
